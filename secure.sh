@@ -106,6 +106,7 @@ function secure_ssh() {
 
     if [ $ALLOW_PASSWORD -ne 1 ]; then
         sudo sed -i 's/#\?\(PasswordAuthentication\s*\).*$/\1 no/' /etc/ssh/sshd_config
+        rm /etc/ssh/sshd_config.d/*.conf
     fi
     
     if [ $ALLOW_PASSWORD -eq 0 ]; then
