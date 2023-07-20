@@ -210,10 +210,6 @@ function main() {
         esac
     done
 
-    if [[ $# -eq 0 || $1 == '-h' || $1 == '--help' ]]; then
-        display_help
-        exit 0
-    fi
         
     init $DEBUG_MODE
 
@@ -259,6 +255,10 @@ function main() {
     fi
 
 
+    if [[ $# -eq 0 || $1 == '-h' || $1 == '--help' ]]; then
+        display_help
+        exit 0
+    fi
 }
 
 # Call the main function with all command line arguments
